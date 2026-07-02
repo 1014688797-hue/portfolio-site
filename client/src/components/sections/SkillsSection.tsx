@@ -1,44 +1,42 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
- * Skills: Botanical tree of knowledge with skill visualization
+ * Skills: AI product capabilities + Vibe Coding + languages
  */
 import { motion } from "framer-motion";
 import SectionWrapper from "../SectionWrapper";
 import { useInView } from "../../hooks/useInView";
 
-const SKILLS_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388655616/RrYG8C9a646Dp8KkPTUPxA/skills-decoration-77YjB7UNbd69kDYbPnpQXb.webp";
-
 const skillCategories = [
   {
-    category: "产品能力",
+    category: "AI 产品能力",
     color: "oklch(0.596 0.145 163.225)",
     skills: [
-      { name: "需求分析与用户研究", level: 95 },
-      { name: "产品规划与路线图", level: 90 },
-      { name: "原型设计与交互", level: 88 },
-      { name: "数据分析与决策", level: 85 },
-      { name: "项目管理", level: 92 },
+      { name: "Agent 产品方案设计", level: 95 },
+      { name: "PRD 撰写与需求分析", level: 93 },
+      { name: "Figma 高保真原型", level: 90 },
+      { name: "模型效果评估", level: 85 },
+      { name: "竞品分析与市场洞察", level: 88 },
     ],
   },
   {
-    category: "AI 技术",
+    category: "Vibe Coding",
     color: "oklch(0.432 0.120 163.225)",
     skills: [
-      { name: "大语言模型应用", level: 90 },
-      { name: "Prompt Engineering", level: 92 },
-      { name: "AIGC 工具链", level: 88 },
-      { name: "机器学习基础", level: 75 },
-      { name: "AI 产品化落地", level: 93 },
+      { name: "Codex CLI / OpenCode", level: 90 },
+      { name: "Cursor / Trae", level: 92 },
+      { name: "Coze / Dify Agent 搭建", level: 93 },
+      { name: "Python / SQL / API", level: 82 },
+      { name: "Prompt Engineering", level: 95 },
     ],
   },
   {
-    category: "创意与内容",
+    category: "内容与创意",
     color: "oklch(0.700 0.130 85)",
     skills: [
-      { name: "内容策划与运营", level: 90 },
-      { name: "新闻采编与写作", level: 85 },
-      { name: "文学创作", level: 82 },
-      { name: "视觉设计感知", level: 78 },
+      { name: "内容策略与品牌建设", level: 92 },
+      { name: "新闻采编与深度报道", level: 88 },
+      { name: "文学创作（诗词/散文）", level: 85 },
+      { name: "跨界营销策划", level: 82 },
       { name: "跨媒体叙事", level: 80 },
     ],
   },
@@ -68,7 +66,6 @@ function SkillBar({ name, level, index, inView, color }: { name: string; level: 
             background: `linear-gradient(90deg, ${color} 0%, ${color}88 100%)`,
           }}
         >
-          {/* Shimmer effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover/bar:opacity-100 transition-opacity duration-500" />
         </motion.div>
       </div>
@@ -84,28 +81,64 @@ export default function SkillsSection() {
       id="skills"
       number="02"
       title="技能图谱"
-      subtitle="如同一棵不断生长的知识之树，每一项技能都是扎根实践、向阳而生的枝叶。"
+      subtitle="AI 产品 × Vibe Coding × 内容创意 — 三者交叉，定义独特的 AI Builder 能力模型。"
       bgClassName="parchment-bg"
     >
       <div ref={ref as React.RefObject<HTMLDivElement>} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-        {/* Skills illustration */}
+        {/* Left side — language & tools summary */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={inView ? { opacity: 1, scale: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="lg:col-span-5 flex items-center justify-center"
+          className="lg:col-span-5 flex flex-col gap-5"
         >
-          <div className="relative">
-            <img
-              src={SKILLS_IMG}
-              alt="Tree of Knowledge & Skills"
-              className="w-full max-w-md rounded-sm shadow-[0_4px_20px_oklch(0.596_0.145_163.225/0.1)]"
-            />
-            {/* Decorative label */}
-            <div className="absolute -bottom-3 -right-3 bg-card border border-border/60 rounded-sm px-3 py-1.5 shadow-sm">
-              <span className="specimen-label text-xs text-emerald-dark/60">
-                Knowledge Tree — 2025
+          {/* Language card */}
+          <div className="bg-card/50 border border-border/40 rounded-sm p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-2 rounded-full bg-emerald" />
+              <span className="text-base text-ink font-normal" style={{ fontFamily: "var(--font-display)" }}>
+                语言能力
               </span>
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span className="text-ink/60">雅思</span>
+                <span className="text-ink font-medium">6.5（阅读写作 7.0）</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-ink/60">CET-6</span>
+                <span className="text-ink font-medium">566</span>
+              </div>
+              <div className="flex justify-between text-sm">
+                <span className="text-ink/60">AI 前沿资料</span>
+                <span className="text-ink font-medium">无障碍阅读</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Education card */}
+          <div className="bg-card/50 border border-border/40 rounded-sm p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-2 h-2 rounded-full bg-emerald-dark" />
+              <span className="text-base text-ink font-normal" style={{ fontFamily: "var(--font-display)" }}>
+                教育背景
+              </span>
+            </div>
+            <div className="space-y-4">
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-ink font-medium">南京大学</span>
+                  <span className="text-ink/40 text-xs">2024 — 2027</span>
+                </div>
+                <p className="text-xs text-ink/50">新闻与传播 硕士 · 复试笔面第一 · GPA 前 1%</p>
+              </div>
+              <div>
+                <div className="flex justify-between text-sm mb-1">
+                  <span className="text-ink font-medium">华中师范大学</span>
+                  <span className="text-ink/40 text-xs">2014 — 2018</span>
+                </div>
+                <p className="text-xs text-ink/50">文学 学士 · GPA 前 15%</p>
+              </div>
             </div>
           </div>
         </motion.div>

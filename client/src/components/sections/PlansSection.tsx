@@ -1,6 +1,7 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
- * Plans: Marketing/product plans showcase with timeline-style layout
+ * Plans: Strategy & planning works with timeline layout
+ * Content: 真实策划案与产品方案
  */
 import { motion } from "framer-motion";
 import SectionWrapper from "../SectionWrapper";
@@ -9,39 +10,39 @@ import { FileCheck, TrendingUp, Users, Target, Award, Lightbulb } from "lucide-r
 
 const plans = [
   {
-    title: "「AI+教育」产品战略规划书",
-    desc: "面向 K12 教育市场的 AI 产品矩阵战略规划，涵盖市场分析、竞品研究、产品路线图与商业模式设计。",
-    result: "获公司年度最佳战略提案",
-    icon: Target,
+    title: "AI 广告 Agent 产品化方案",
+    desc: "携程 Ads Automation 从验证到推全的产品方案，涵盖监控体系、复盘机制、三档推全策略，建立「监控—复盘—推全」运营闭环。",
+    result: "场景覆盖 +361% · Ad Strength +14.7ppt",
+    icon: TrendingUp,
+    year: "2026",
+  },
+  {
+    title: "语文作文批改优化 SOP",
+    desc: "主导制定批改标准化流程，将批改逻辑升级为「问题定位+修改指导+案例示范」三位一体模式，设计基于学段差异及文体分类的评分维度体系。",
+    result: "AI 与专家评分一致性 95%",
+    icon: FileCheck,
     year: "2025",
   },
   {
-    title: "新零售智能导购方案",
-    desc: "基于计算机视觉与推荐算法的线下零售智能化升级方案，从用户动线分析到个性化推荐的全链路设计。",
-    result: "落地 3 家标杆门店，GMV 提升 25%",
-    icon: TrendingUp,
-    year: "2024",
-  },
-  {
-    title: "社交媒体 AIGC 运营策划",
-    desc: "为某头部品牌设计的 AIGC 内容运营体系，包括 AI 内容生产流程、审核机制与效果评估框架。",
-    result: "内容产出效率提升 300%",
+    title: "珠海国际设计周 × 奈雪的茶",
+    desc: "独立策划跨界营销活动，整合线上线下资源，设计从报名到传播的全链路用户体验方案，4 天超 7000 人报名。",
+    result: "线上浏览量 630 万",
     icon: Users,
-    year: "2024",
+    year: "2022",
   },
   {
-    title: "企业数字化转型白皮书",
-    desc: "传统制造业数字化转型的系统性方案，从组织架构、技术选型到实施路径的全面规划。",
-    result: "被行业协会收录为参考案例",
+    title: "品牌内容矩阵 0→1 建设方案",
+    desc: "华发集团品牌内容体系从零搭建，涵盖内容策略、栏目规划、分发机制与效果评估，累计 135 篇原创（42 万余字）。",
+    result: "杂志年发行量 10 万+册",
     icon: Lightbulb,
-    year: "2023",
+    year: "2018-2024",
   },
   {
-    title: "AI 产品用户增长方案",
-    desc: "针对 AI 工具类产品的用户增长策略，涵盖获客、激活、留存、变现的 AARRR 全漏斗优化方案。",
-    result: "3 个月内 DAU 增长 180%",
-    icon: Award,
-    year: "2023",
+    title: "AI 教育产品分层批改方案",
+    desc: "横向对比有道、好未来、百川等多个大模型 API，确定分层批改最优技术方案，输出多维度 Prompt 模板与评估标准。",
+    result: "确定最优技术方案",
+    icon: Target,
+    year: "2025",
   },
 ];
 
@@ -52,8 +53,8 @@ export default function PlansSection() {
     <SectionWrapper
       id="plans"
       number="04"
-      title="策划案"
-      subtitle="每一份策划案都是一次系统性思考的结晶，从洞察到落地，用产品思维解决真实问题。"
+      title="策划与方案"
+      subtitle="每一次系统性思考，都是一次对产品边界的重新定义。"
       bgClassName="parchment-bg"
     >
       <div ref={ref as React.RefObject<HTMLDivElement>} className="relative">

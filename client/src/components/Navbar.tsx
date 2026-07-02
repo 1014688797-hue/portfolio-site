@@ -9,13 +9,13 @@ import { Menu, X, Leaf } from "lucide-react";
 
 const navLinks = [
   { label: "首页", href: "#hero" },
-  { label: "实践项目", href: "#projects" },
+  { label: "项目与黑客松", href: "#projects" },
   { label: "技能", href: "#skills" },
-  { label: "AIGC 作品", href: "#aigc" },
-  { label: "策划案", href: "#plans" },
-  { label: "新闻作品", href: "#news" },
-  { label: "工作作品", href: "#work" },
-  { label: "文学作品", href: "#literary" },
+  { label: "AI Agent", href: "#aigc" },
+  { label: "策划与方案", href: "#plans" },
+  { label: "内容与写作", href: "#news" },
+  { label: "工作与实习", href: "#work" },
+  { label: "文学", href: "#literary" },
 ];
 
 export default function Navbar() {
@@ -70,7 +70,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           scrolled
-            ? "bg-[oklch(0.975_0.008_85/0.92)] backdrop-blur-md shadow-[0_1px_0_oklch(0.596_0.145_163.225/0.15)]"
+            ? "glass-card shadow-[0_1px_0_oklch(0.596_0.145_163.225/0.12)] border-b border-emerald/10"
             : "bg-transparent"
         }`}
       >
@@ -138,7 +138,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-16 z-40 bg-[oklch(0.975_0.008_85/0.97)] backdrop-blur-lg lg:hidden"
+            className="fixed inset-0 top-16 z-40 glass-card lg:hidden"
           >
             <div className="container py-8 flex flex-col gap-2">
               {navLinks.map((link, i) => (

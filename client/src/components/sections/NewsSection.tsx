@@ -1,6 +1,7 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
- * News: Journalism works showcase with newspaper-style layout
+ * News: Journalism works from 华发集团 period
+ * Content: 135 articles, 42万+ words, various publications
  */
 import { motion } from "framer-motion";
 import SectionWrapper from "../SectionWrapper";
@@ -10,51 +11,51 @@ import { Newspaper, Calendar, BookOpen, ExternalLink } from "lucide-react";
 
 const newsWorks = [
   {
-    title: "AI 浪潮下的产品经理转型之路",
-    publication: "36氪",
-    date: "2025.01",
+    title: "品牌内容矩阵 0→1 建设实践",
+    publication: "华发集团内部刊物",
+    date: "2018-2024",
+    type: "内容策略",
+    excerpt: "从零搭建集团品牌内容体系，累计发表 135 篇原创作品（42 万余字），涵盖品牌故事、产品解读、人物专访、行业观察等多元体裁，杂志年发行量 10 万+册。",
+    featured: true,
+  },
+  {
+    title: "珠海国际设计周 × 奈雪的茶：跨界营销全记录",
+    publication: "品牌营销案例",
+    date: "2022",
     type: "深度报道",
-    excerpt: "深入调研 50+ 位产品经理的转型经历，揭示 AI 时代产品经理角色演变的趋势与挑战。",
+    excerpt: "独立策划并执行城市级跨界营销活动，从创意构思到落地执行的全链路记录，4 天超 7000 人报名，线上直播浏览量 630 万。",
     featured: true,
   },
   {
-    title: "大模型落地：从实验室到生产线的距离",
-    publication: "机器之心",
-    date: "2024.09",
-    type: "行业分析",
-    excerpt: "走访 10 家 AI 企业，记录大模型从技术突破到产品落地的真实故事与经验教训。",
-    featured: true,
-  },
-  {
-    title: "AIGC 创作者生态调查报告",
-    publication: "极客公园",
-    date: "2024.06",
-    type: "调查报告",
-    excerpt: "基于 1000+ 份问卷和 30+ 深度访谈，描绘 AIGC 创作者群体的生存现状与未来展望。",
+    title: "城市更新中的文化叙事",
+    publication: "华发集团",
+    date: "2023",
+    type: "专题报道",
+    excerpt: "15+ 城市级品牌项目统筹经验总结，探讨城市更新语境下品牌内容如何讲述城市故事、传递文化价值。",
     featured: false,
   },
   {
-    title: "智慧城市建设的「最后一公里」",
-    publication: "南方周末",
-    date: "2024.03",
-    type: "特稿",
-    excerpt: "跟踪报道某二线城市智慧社区试点项目，记录技术理想与现实落差之间的故事。",
+    title: "AI 时代的产品经理：从洞察到落地",
+    publication: "个人专栏",
+    date: "2025",
+    type: "行业观察",
+    excerpt: "基于 40+ PRD 的实战经验，总结 AI 产品经理从需求洞察到产品上线的完整方法论，涵盖 Agent 设计、Prompt 工程与效果评估。",
     featured: false,
   },
   {
-    title: "当 AI 学会写诗：人机协作创作实验",
-    publication: "新周刊",
-    date: "2023.11",
-    type: "文化观察",
-    excerpt: "邀请 5 位诗人与 AI 进行协作创作实验，探讨人工智能时代文学创作的边界与可能。",
+    title: "从内容策略到 AI 产品：一次能力迁徙",
+    publication: "个人博客",
+    date: "2026",
+    type: "职业叙事",
+    excerpt: "记录从 6 年内容策略主管到 AI 产品经理的转型历程，探讨内容思维与产品思维的交叉与融合。",
     featured: false,
   },
   {
-    title: "数据隐私保护的中国实践",
-    publication: "财经杂志",
-    date: "2023.08",
-    type: "政策解读",
-    excerpt: "解读《个人信息保护法》实施两年来的企业合规实践，采访法律专家与企业负责人。",
+    title: "魔法少女与 AI 的对话",
+    publication: "创意写作",
+    date: "2025",
+    type: "创意实验",
+    excerpt: "以魔法少女的视角，与 AI 进行一场关于创造力、情感与未来的对话实验，探索文学与人工智能的边界。",
     featured: false,
   },
 ];
@@ -66,8 +67,8 @@ export default function NewsSection() {
     <SectionWrapper
       id="news"
       number="05"
-      title="新闻作品"
-      subtitle="用文字记录时代脉搏，以产品人的视角观察科技与社会的交汇。"
+      title="内容与写作"
+      subtitle="135 篇原创 · 42 万余字。用文字记录时代，以产品人的视角观察科技与社会的交汇。"
     >
       <div ref={ref as React.RefObject<HTMLDivElement>}>
         {/* Featured articles - larger cards */}
@@ -99,15 +100,12 @@ export default function NewsSection() {
                   {news.excerpt}
                 </p>
 
-                {/* Publication + link */}
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Newspaper className="w-3.5 h-3.5 text-emerald/50" />
-                    <span className="specimen-label text-sm text-emerald-dark/70">
-                      {news.publication}
-                    </span>
-                  </div>
-                  <ExternalLink className="w-3.5 h-3.5 text-emerald/30 group-hover:text-emerald transition-colors" />
+                {/* Publication */}
+                <div className="flex items-center gap-2">
+                  <Newspaper className="w-3.5 h-3.5 text-emerald/50" />
+                  <span className="specimen-label text-sm text-emerald-dark/70">
+                    {news.publication}
+                  </span>
                 </div>
               </div>
             </AnimatedCard>

@@ -1,6 +1,6 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
- * SectionWrapper: Reusable section with specimen-style numbering and botanical divider
+ * SectionWrapper: Premium section with staggered reveal animations
  */
 import { motion } from "framer-motion";
 import { useInView } from "../hooks/useInView";
@@ -30,35 +30,53 @@ export default function SectionWrapper({
     <section
       id={id}
       ref={ref}
-      className={`relative py-20 lg:py-28 ${bgClassName}`}
+      className={`relative py-20 lg:py-28 overflow-hidden ${bgClassName}`}
     >
-      <div className={`container ${className}`}>
-        {/* Section header with specimen numbering */}
+      <div className={`container relative z-10 ${className}`}>
+        {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="mb-12 lg:mb-16"
         >
           <div className="flex items-center gap-4 mb-4">
-            <span className="section-number text-sm tracking-widest uppercase">
+            <motion.span
+              initial={{ opacity: 0, x: -10 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="section-number text-sm tracking-widest uppercase"
+            >
               Specimen No.{number}
-            </span>
-            <div className="botanical-divider flex-1 max-w-[120px]" />
+            </motion.span>
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={inView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="botanical-divider flex-1 max-w-[120px] origin-left"
+            />
           </div>
-          <h2
-            className="text-3xl lg:text-4xl xl:text-5xl text-ink leading-tight"
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-3xl lg:text-4xl xl:text-5xl text-ink leading-tight gradient-text-static"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {title}
-          </h2>
+          </motion.h2>
+
           {subtitle && (
-            <p
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.25 }}
               className="mt-3 text-base lg:text-lg text-ink/55 max-w-2xl leading-relaxed"
               style={{ fontFamily: "var(--font-body)" }}
             >
               {subtitle}
-            </p>
+            </motion.p>
           )}
         </motion.div>
 

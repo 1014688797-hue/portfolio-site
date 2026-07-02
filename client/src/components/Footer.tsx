@@ -51,7 +51,7 @@ export default function Footer() {
               className="text-sm leading-relaxed opacity-60 max-w-xs"
               style={{ fontFamily: "var(--font-body)" }}
             >
-              AI 产品经理的数字花园，记录产品思考、技术探索与创意实践的每一步成长。
+              AI Builder 的数字花园，记录 AI 产品、Vibe Coding 与创意实践的每一步成长。
             </p>
           </motion.div>
 
@@ -69,12 +69,12 @@ export default function Footer() {
             </h4>
             <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
               {[
-                { label: "实践项目", href: "#projects" },
+                { label: "项目与黑客松", href: "#projects" },
                 { label: "技能图谱", href: "#skills" },
-                { label: "AIGC 作品", href: "#aigc" },
-                { label: "策划案", href: "#plans" },
-                { label: "新闻作品", href: "#news" },
-                { label: "文学作品", href: "#literary" },
+                { label: "AI Agent", href: "#aigc" },
+                { label: "策划与方案", href: "#plans" },
+                { label: "内容与写作", href: "#news" },
+                { label: "文学", href: "#literary" },
               ].map((link) => (
                 <a
                   key={link.href}
@@ -102,22 +102,26 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:hello@example.com"
+                href="mailto:huangying@smail.nju.edu.cn"
                 className="flex items-center gap-2 text-sm opacity-50 hover:opacity-100 hover:text-emerald-light transition-all duration-300"
               >
                 <Mail className="w-4 h-4" />
-                hello@example.com
+                huangying@smail.nju.edu.cn
               </a>
               <div className="flex items-center gap-3 mt-2">
                 <a
-                  href="#"
+                  href="https://github.com/1014688797-hue"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2.5 rounded-sm border border-white/8 opacity-50 hover:opacity-100 hover:border-emerald-light/30 hover:text-emerald-light hover:bg-emerald-light/5 transition-all duration-300"
                   aria-label="GitHub"
                 >
                   <Github className="w-4 h-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/danica-huang/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2.5 rounded-sm border border-white/8 opacity-50 hover:opacity-100 hover:border-emerald-light/30 hover:text-emerald-light hover:bg-emerald-light/5 transition-all duration-300"
                   aria-label="LinkedIn"
                 >

@@ -1,6 +1,7 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
  * Work: Professional work showcase with company timeline
+ * Content: 携程 → 合合信息 → 智谱 → 华发集团
  */
 import { motion } from "framer-motion";
 import SectionWrapper from "../SectionWrapper";
@@ -9,47 +10,66 @@ import { Building2, ArrowUpRight, Briefcase } from "lucide-react";
 
 const workExperience = [
   {
-    company: "某头部 AI 科技公司",
-    role: "高级 AI 产品经理",
-    period: "2024 — 至今",
+    company: "携程 · IBU 市场部 Ads Automation",
+    role: "AI 产品经理实习生",
+    period: "2026.02 — 至今",
     works: [
       {
-        title: "企业级 AI Agent 平台",
-        desc: "主导设计企业级 AI Agent 开发平台，支持可视化编排、多模型调度与自动化工作流，服务 500+ 企业客户。",
+        title: "AI 广告 Agent 产品化与规模化",
+        desc: "主导 AI 广告文案 Agent 从验证到业务推全的产品方案，建立「监控—复盘—推全」运营闭环。场景覆盖 +361%（18→83/140），Ad Strength average +14.7ppt，Hotel-City 等线路最高 +51.7ppt。",
       },
       {
-        title: "智能文档处理系统",
-        desc: "从 0 到 1 打造基于多模态大模型的文档智能处理产品，实现合同审核、报告提取等场景自动化。",
+        title: "产品方案与平台体验（PPC & Facebook）",
+        desc: "独立负责 PPC 与 Facebook 两大板块产品方案，完成需求调研、PRD 撰写、Figma 原型输出与测试验收全流程，累计输出 40 余份 PRD，以成熟 PM 标准独立闭环从需求到上线的完整链路。",
+      },
+      {
+        title: "数据策略与实验分析",
+        desc: "熟练使用 SQL / BigQuery 完成多源数据取数与可视化分析。独立撰写 Facebook 周报、RSA 风格实验 AA/AB 报告（28 天对比窗口），输出三档推全建议。",
       },
     ],
   },
   {
-    company: "某互联网大厂",
-    role: "产品经理",
-    period: "2022 — 2024",
+    company: "合合信息 · 扫描全能王（蜜蜂教育）",
+    role: "AI 教研产品实习",
+    period: "2025.10 — 2026.02",
     works: [
       {
-        title: "内容推荐算法优化",
-        desc: "负责信息流推荐产品的策略优化，通过 A/B 测试驱动的迭代方法，将用户时长提升 15%，点击率提升 22%。",
+        title: "Coze Agent 工作流搭建",
+        desc: "基于 Coze 平台搭建课件审核、学情分析、作文批改等多类教育智能体自动化工作流；主导分析 22 万条用户数据，输出复盘报告并推动功能迭代。",
       },
       {
-        title: "创作者工具套件",
-        desc: "设计并推动创作者端工具矩阵建设，包括 AI 辅助写作、智能封面生成、数据看板等功能模块。",
+        title: "Prompt 工程与多模型调优",
+        desc: "负责立意、结构、语言等多维度 Prompt 编写与迭代；横向对比测试有道、好未来、百川等多个大模型 API，确定分层批改最优技术方案；AI 与教研专家评分一致性达 95%。",
+      },
+      {
+        title: "批改 SOP 与评分体系设计",
+        desc: "主导制定《语文作文批改优化 SOP》，将批改逻辑升级为「问题定位+修改指导+案例示范」三位一体模式；设计基于学段差异及文体分类的评分维度体系。",
       },
     ],
   },
   {
-    company: "某创业公司",
-    role: "产品经理",
-    period: "2020 — 2022",
+    company: "智谱华章 · 智谱清言",
+    role: "AI 训练师（线上）",
+    period: "2024.12 — 2025.03",
     works: [
       {
-        title: "SaaS 客户管理平台",
-        desc: "主导 B 端 CRM 产品从 MVP 到商业化的全过程，建立产品指标体系，实现 ARR 从 0 到 500 万的增长。",
+        title: "Prompt 模板设计与质量评估",
+        desc: "独立设计并迭代 20+ 个高成功率 Prompt 模板，通过 Few-shot 与 CoT 技术将生成内容质量评分提升至基准线 145%。构建 5 维度量化评估标准，定期分析模型输出日志，追踪 Bad Case 并反馈算法团队。",
+      },
+    ],
+  },
+  {
+    company: "华发集团（广东国企 TOP5）",
+    role: "内容策略主管",
+    period: "2018.02 — 2024.08",
+    works: [
+      {
+        title: "品牌内容矩阵 0→1 建设",
+        desc: "从零搭建集团品牌内容体系，累计发表 135 篇原创（42 万余字），杂志年发行量 10 万+册。",
       },
       {
-        title: "数据分析中台",
-        desc: "搭建公司内部数据分析平台，统一数据口径与看板体系，支撑业务决策效率提升 60%。",
+        title: "城市级品牌项目统筹",
+        desc: "统筹 15+ 城市级品牌项目，独立策划「珠海国际设计周×奈雪的茶」跨界营销，4 天超 7000 人报名，线上直播浏览量 630 万。",
       },
     ],
   },
@@ -62,8 +82,8 @@ export default function WorkSection() {
     <SectionWrapper
       id="work"
       number="06"
-      title="在职工作作品"
-      subtitle="职业旅途中的每一站，都留下了值得记录的产品印记。"
+      title="工作与实习"
+      subtitle="从内容策略到 AI 产品，每一次转身都是能力的叠加而非替换。"
       bgClassName="parchment-bg"
     >
       <div ref={ref as React.RefObject<HTMLDivElement>} className="space-y-12">
@@ -98,7 +118,7 @@ export default function WorkSection() {
             </div>
 
             {/* Work items */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-0 sm:pl-12">
+            <div className={`grid grid-cols-1 ${exp.works.length > 1 ? "md:grid-cols-2" : ""} gap-4 pl-0 sm:pl-12`}>
               {exp.works.map((work, workIndex) => (
                 <motion.div
                   key={work.title}

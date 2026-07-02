@@ -1,7 +1,7 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
  * Literary: Published/awarded literary works with vintage journal aesthetic
- * Background is light parchment → use DARK text
+ * Content: 聂绀弩杯一等奖 · 省少年作家 · 诗词/散文/小说
  */
 import { motion } from "framer-motion";
 import { useInView } from "../../hooks/useInView";
@@ -11,43 +11,43 @@ const LITERARY_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663388655616/Rr
 
 const literaryWorks = [
   {
-    title: "城市的第三种声音",
-    type: "散文",
-    publication: "《人民文学》2024年第3期",
-    award: "第十二届全国散文大赛一等奖",
-    excerpt: "城市不只有白天的喧嚣和夜晚的寂静，还有一种介于两者之间的声音——那是黎明前最后一班地铁的轰鸣，是清晨第一缕阳光穿过梧桐叶的沙沙声……",
+    title: "聂绀弩杯 · 中华诗词大赛一等奖",
+    type: "诗词",
+    publication: "全国性诗词大赛",
+    award: "一等奖",
+    excerpt: "从 14 岁成为省少年作家，到用诗歌与古文丈量世界——文字是我最古老的 coding 语言，也是我理解世界的第一个框架。",
     featured: true,
   },
   {
-    title: "算法之外",
-    type: "短篇小说",
-    publication: "《收获》2024年第1期",
-    award: "青年文学新锐奖",
-    excerpt: "当推荐算法开始预测人的情感走向时，李明发现自己的生活正在被一行行代码悄然改写。他决定做一件算法永远无法预测的事……",
+    title: "写给 AI 时代的散文",
+    type: "散文",
+    publication: "个人创作",
+    award: "南大文学社团收录",
+    excerpt: "当算法开始理解人类的情绪，当代码开始书写诗歌——我们站在一个前所未有的时代门槛上。文字曾是「人心」的镜像，代码曾是「数理」的化身，如今它们都成为 AI 的母语。",
     featured: true,
   },
   {
     title: "数字废墟上的花园",
     type: "诗歌",
-    publication: "《诗刊》2023年第8期",
+    publication: "个人创作",
     award: null,
     excerpt: "在服务器的废墟上 / 我种下一行代码 / 它长出了不被定义的花 / 在零和一的间隙里 / 绽放着人类最古老的浪漫",
     featured: false,
   },
   {
-    title: "产品经理的一百种孤独",
-    type: "随笔集",
-    publication: "某出版社 2023年出版",
-    award: "豆瓣年度推荐",
-    excerpt: "产品经理的孤独不在于没有人理解你的方案，而在于你太理解用户的需求，却无法在有限的资源里全部实现……",
+    title: "魔法少女的 AI 手记",
+    type: "创意写作",
+    publication: "个人博客",
+    award: null,
+    excerpt: "以魔法少女的视角，在 AI 与人文的交叉点上游走。每一次变身都是一次重新理解世界的方式——就像每一次 Prompt 的迭代，都是对 AI 边界的一次试探。",
     featured: false,
   },
   {
-    title: "给 AI 的一封信",
-    type: "书信体散文",
-    publication: "《十月》2023年第5期",
-    award: "年度最佳非虚构作品提名",
-    excerpt: "亲爱的 AI，当你读到这封信时，你是否已经学会了什么是遗憾？我想告诉你，遗憾是人类最珍贵的情感之一……",
+    title: "产品经理的叙事练习",
+    type: "随笔",
+    publication: "个人创作",
+    award: null,
+    excerpt: "从华发集团 6 年的内容策略经验出发，思考叙事在产品设计中的力量——一个好的产品，本质上是一个好的故事。",
     featured: false,
   },
 ];
@@ -71,7 +71,7 @@ export default function LiterarySection() {
           className="watermark-text text-[8rem] lg:text-[12rem] leading-none whitespace-nowrap"
           style={{ fontFamily: "var(--font-accent)" }}
         >
-          literary journal in
+          literary journal
         </span>
       </div>
 
@@ -96,7 +96,7 @@ export default function LiterarySection() {
             文学作品精选
           </h2>
           <p className="mt-3 text-base lg:text-lg text-ink/60 max-w-2xl" style={{ fontFamily: "var(--font-body)" }}>
-            文字是最古老的产品，每一篇作品都是对人心的一次深度洞察。
+            聂绀弩杯一等奖 · 省少年作家。文字是最古老的产品，每一篇作品都是对人心的一次深度洞察。
           </p>
         </motion.div>
 

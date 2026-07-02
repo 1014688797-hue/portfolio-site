@@ -1,6 +1,6 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
- * AnimatedCard: Specimen-style card with hover effects and stagger animation
+ * AnimatedCard: Premium card with 3D hover, gradient accent, and stagger animation
  */
 import { motion } from "framer-motion";
 
@@ -19,26 +19,27 @@ export default function AnimatedCard({
 }: AnimatedCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{
         duration: 0.5,
         delay: index * 0.08,
-        ease: "easeOut",
+        ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      whileHover={{
-        y: -4,
-        transition: { duration: 0.25, ease: "easeOut" },
-      }}
+      whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
       className={`group relative bg-card border border-border/60 rounded-sm overflow-hidden
-        shadow-[0_2px_8px_oklch(0.596_0.145_163.225/0.05)]
-        hover:shadow-[0_8px_28px_oklch(0.596_0.145_163.225/0.1)]
-        hover:border-emerald/25
-        transition-[box-shadow,border-color] duration-300
+        shadow-[0_2px_8px_oklch(0.596_0.145_163.225/0.04)]
+        hover:shadow-[0_12px_32px_oklch(0.596_0.145_163.225/0.12)]
+        hover:border-emerald/20
+        transition-all duration-300
         ${className}`}
     >
-      {/* Top botanical accent line */}
+      {/* Top accent line — grows on hover */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+
+      {/* Bottom subtle glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-emerald/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
       {children}
     </motion.div>
   );

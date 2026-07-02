@@ -1,54 +1,61 @@
 /*
  * Design: Neo-Swiss Botanical — 「数字花园」
- * Projects: Practice project showcase with specimen-card layout
+ * Projects: Real AI projects + hackathon achievements
+ * Content: SpacePlay, 数字幻窗, Coze Agent, etc.
  */
 import SectionWrapper from "../SectionWrapper";
 import AnimatedCard from "../AnimatedCard";
 import { useInView } from "../../hooks/useInView";
-import { ExternalLink, Layers, Brain, MessageSquare, BarChart3, Smartphone, Globe } from "lucide-react";
+import { ExternalLink, Trophy, Bot, Code2, Palette, BarChart3, Cpu } from "lucide-react";
 
 const projects = [
   {
-    title: "AI 智能客服系统",
-    desc: "基于大语言模型的智能客服解决方案，实现多轮对话、意图识别与情感分析，将客服效率提升 40%。",
-    tags: ["NLP", "产品设计", "用户体验"],
-    icon: MessageSquare,
+    title: "SpacePlay · 空间剧场",
+    desc: "AI+文化方向的沉浸式空间体验产品。从 idea 到落地，带队完成全栈开发与 UI 设计，荣获抖音 AI 创变者二等奖，晋级华东大区赛，获投资机构及南京 1912 园区合作邀约。",
+    tags: ["AI+文化", "全栈开发", "队长"],
+    icon: Palette,
     accent: "oklch(0.596 0.145 163.225)",
+    highlight: "抖音 AI 创变者 二等奖",
   },
   {
-    title: "AIGC 内容创作平台",
-    desc: "面向内容创作者的 AI 辅助写作平台，集成文本生成、图像创作、排版优化等功能，月活用户超 10 万。",
-    tags: ["AIGC", "平台设计", "增长策略"],
-    icon: Brain,
+    title: "数字幻窗 · AI 硬件",
+    desc: "从用户场景洞察出发，定义 AI 硬件产品交互与体验。荣获南客松生活创新体验银奖、影石 ThinkBoard 奖。",
+    tags: ["AI 硬件", "产品设计", "交互体验"],
+    icon: Cpu,
     accent: "oklch(0.432 0.120 163.225)",
+    highlight: "南客松银奖 · 影石 ThinkBoard 奖",
   },
   {
-    title: "数据可视化大屏",
-    desc: "企业级实时数据监控大屏产品，支持多维度数据分析、自定义看板与智能预警，服务 50+ 企业客户。",
-    tags: ["数据产品", "B端", "可视化"],
+    title: "AI 陪伴机器人",
+    desc: "设计面向情感陪伴场景的 AI 对话机器人产品方案，涵盖人格定义、多轮对话策略与情感识别模块，荣获浦软 AINX 二等奖。",
+    tags: ["AI 陪伴", "情感计算", "对话设计"],
+    icon: Bot,
+    accent: "oklch(0.700 0.130 85)",
+    highlight: "浦软 AINX 二等奖",
+  },
+  {
+    title: "Coze 教育 Agent 矩阵",
+    desc: "在 Coze 平台搭建课件审核、学情分析、作文批改等多类教育智能体，分析 22 万条用户数据驱动迭代，AI 评分与专家一致性达 95%。",
+    tags: ["Coze", "Agent", "教育科技"],
+    icon: Code2,
+    accent: "oklch(0.596 0.145 163.225)",
+    highlight: "合合信息实习项目",
+  },
+  {
+    title: "AI 广告文案 Agent",
+    desc: "携程 Ads Automation 核心产品，主导从验证到推全的 Agent 产品方案，场景覆盖 +361%，Ad Strength +14.7ppt，补全文案 129 万→222 万。",
+    tags: ["Agent 产品化", "规模化", "数据驱动"],
     icon: BarChart3,
-    accent: "oklch(0.700 0.130 85)",
-  },
-  {
-    title: "AI 教育助手 App",
-    desc: "K12 领域的 AI 学习助手，通过个性化推荐算法为学生定制学习路径，获得教育部创新项目认证。",
-    tags: ["教育科技", "移动端", "AI推荐"],
-    icon: Smartphone,
-    accent: "oklch(0.596 0.145 163.225)",
-  },
-  {
-    title: "智慧社区管理系统",
-    desc: "物联网+AI 驱动的社区管理平台，整合安防、物业、便民服务，覆盖 200+ 社区，服务 50 万居民。",
-    tags: ["IoT", "平台架构", "B2G"],
-    icon: Globe,
     accent: "oklch(0.432 0.120 163.225)",
+    highlight: "携程实习项目",
   },
   {
-    title: "多模态内容审核引擎",
-    desc: "融合文本、图像、视频的 AI 内容审核系统，准确率达 99.2%，日处理量超千万条，大幅降低人工成本。",
-    tags: ["AI安全", "多模态", "中台"],
-    icon: Layers,
+    title: "全球 A2A 黑客松 · 知乎特别奖",
+    desc: "Agent-to-Agent 协作场景的创意方案，探索多智能体协同的落地可能性，荣获知乎特别奖。",
+    tags: ["A2A", "多 Agent", "协作"],
+    icon: Trophy,
     accent: "oklch(0.700 0.130 85)",
+    highlight: "A2A 知乎特别奖",
   },
 ];
 
@@ -59,8 +66,8 @@ export default function ProjectsSection() {
     <SectionWrapper
       id="projects"
       number="01"
-      title="实践项目"
-      subtitle="从 0 到 1 的产品实践，每一个项目都是一次对用户需求的深度探索与技术可能性的验证。"
+      title="项目与黑客松"
+      subtitle="6 战 6 奖 · AI 黑客松全胜战绩。从 Agent 产品化到 AI 硬件，用代码与产品思维验证每一个想法。"
     >
       <div ref={ref as React.RefObject<HTMLDivElement>} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, i) => (
@@ -96,7 +103,7 @@ export default function ProjectsSection() {
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-1.5 mb-5">
+              <div className="flex flex-wrap gap-1.5 mb-4">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
@@ -107,15 +114,13 @@ export default function ProjectsSection() {
                 ))}
               </div>
 
-              {/* Link */}
-              <a
-                href="#"
-                className="inline-flex items-center gap-1.5 text-xs text-emerald hover:text-emerald-dark transition-colors duration-300"
-                style={{ fontFamily: "var(--font-accent)" }}
-              >
-                查看详情
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              {/* Highlight */}
+              <div className="flex items-center gap-1.5 px-3 py-2 bg-amber-gold/8 border border-amber-gold/15 rounded-sm">
+                <Trophy className="w-3.5 h-3.5 text-amber-gold flex-shrink-0" />
+                <span className="text-xs text-amber-gold font-medium">
+                  {project.highlight}
+                </span>
+              </div>
             </div>
           </AnimatedCard>
         ))}
